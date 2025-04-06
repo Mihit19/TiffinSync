@@ -2460,3 +2460,106 @@
 .auth-footer a:hover {
   text-decoration: underline;
 }
+
+/* 🥡 TiffinSync Loader Animation */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  z-index: 1000;
+}
+
+.logo-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.word-container {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.letter {
+  font-family: 'Comic Neue', cursive;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--tomato);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: letterPop 0.5s forwards;
+}
+
+@keyframes letterPop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tiffin stack animation */
+.tiffin-stack {
+  position: relative;
+  height: 80px;
+  margin-top: 1rem;
+}
+
+.tiffin-top, .tiffin-middle, .tiffin-bottom {
+  width: 120px;
+  height: 25px;
+  background: #5E2C04;
+  border: 3px solid #3D1C02;
+  border-radius: 8px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.tiffin-top {
+  top: 0;
+  animation: 
+    tiffinAppear 0.5s 1.5s forwards,
+    bounce 1.5s 2s infinite;
+}
+
+.tiffin-middle {
+  top: 30px;
+  animation: 
+    tiffinAppear 0.5s 1.7s forwards,
+    bounce 1.5s 2.2s infinite;
+}
+
+.tiffin-bottom {
+  top: 60px;
+  animation: 
+    tiffinAppear 0.5s 1.9s forwards,
+    bounce 1.5s 2.4s infinite;
+}
+
+@keyframes tiffinAppear {
+  from { opacity: 0; transform: translateX(-50%) scale(0.8); }
+  to { opacity: 1; transform: translateX(-50%) scale(1); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-15px); }
+}
+
+.loading-text {
+  margin-top: 2rem;
+  font-family: 'Comic Neue', cursive;
+  color: var(--tomato);
+  font-size: 1.2rem;
+  opacity: 0;
+  animation: fadeIn 0.5s 2.5s forwards;
+}

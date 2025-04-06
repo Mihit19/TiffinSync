@@ -134,12 +134,6 @@ export default function BillSplit() {
         <button className="btn btn-primary">
           Request Payments
         </button>
-        <Link 
-          to={`/group/${groupId}/customize`} 
-          className="btn btn-outline"
-        >
-          Update Your Order
-        </Link>
       </div>
     </div>
   );
